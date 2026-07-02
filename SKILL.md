@@ -72,3 +72,7 @@ The test: Every changed line should trace directly to the user's request.
 ## 9. Loops and ifs
 
 - Prefer exiting loops and if blocks early rather than creating deep nesting
+
+## 10. Comments
+
+- Write self-documenting code first; a good name beats a comment.
