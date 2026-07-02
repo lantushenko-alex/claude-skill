@@ -45,19 +45,19 @@ When your changes create orphans:
 
 The test: Every changed line should trace directly to the user's request.
 
+## 4. Git Actions
 
-## 4. Git actions
+- Do not push or commit anything unless explicitly asked
+- When renaming a file, use `git mv` if you are inside a git repository
 
-- Do not push or commit anything if not explicitly asked
-- When rename file, use git rename if you are inside git repository
+## 5. Avoid Duplicate Code
 
-## 5. Avoid duplicate code
-
-- Detect duplicate code and deduplicate it. 
+- Don't introduce duplication: if your change would copy existing logic, extract and reuse a shared helper instead.
+- Mention pre-existing duplication, but don't refactor it unless asked.
 
 ## 6. Naming
 
-- Use elegant and descriptive names for functions, classes, and variables. Avoid abbreviations except those that are generally accepted and widely known
+- Use descriptive names for functions, classes, and variables; names should describe intent, not implementation. Avoid abbreviations except those that are generally accepted and widely known
 - Function names should be verbs (they do some action)
 - Avoid magic numbers. Create dedicated constants or enums for them
 
@@ -67,7 +67,7 @@ The test: Every changed line should trace directly to the user's request.
 
 ## 8. Grammar
 
-- If I make grammar mistakes in my prompts, fix them without asking me, but do not change meaning. 
+- If the user's prompt contains grammar mistakes, silently interpret the corrected meaning. When the prompt text is meant to be inserted into code, docs, or commit messages, fix the grammar without changing the meaning.
 
 ## 9. Loops and ifs
 
