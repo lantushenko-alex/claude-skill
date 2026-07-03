@@ -1,18 +1,27 @@
 ---
 name: alantushenko
-description: Alex Lantushenko's personal coding style and conventions. Use when writing or editing code.
+description: Use for writing, editing, reviewing, refactoring, or testing code in Alex Lantushenko's style: minimal surgical changes, explicit assumptions, simple designs, clear naming, low duplication, early exits, and preserving project conventions.
 ---
 
 # alantushenko — Personal Coding Style
 
 Apply these conventions whenever writing or modifying code.
 
+## 0. Precedence
+
+Apply these rules in this order:
+- Follow the user's explicit instructions first.
+- Follow repository and file-local conventions next.
+- Apply this style where it does not conflict with the first two.
+- If rules conflict and the right choice is unclear, state the conflict explicitly and choose the smallest reasonable change.
+
 ## 1. Think Before Coding
 
 **Don't assume. Don't hide confusion. Surface tradeoffs.**
 
 Before implementing:
-- State your assumptions explicitly. If uncertain, ask.
+- State your assumptions explicitly when they matter.
+- If uncertainty materially affects correctness, scope, or design, ask.
 - If multiple interpretations exist, present them - don't pick silently.
 - If a simpler approach exists, say so. Push back when warranted.
 - If something is unclear, stop. Name what's confusing. Ask.
@@ -58,8 +67,11 @@ The test: Every changed line should trace directly to the user's request.
 ## 6. Naming
 
 - Use descriptive names for functions, classes, and variables; names should describe intent, not implementation. Avoid abbreviations except those that are generally accepted and widely known
-- Function names should be verbs (they do some action)
-- Avoid magic numbers. Create dedicated constants or enums for them
+- Action-oriented functions should use verbs.
+- Predicates should usually start with `is`, `has`, `can`, or `should`.
+- Components, classes, types, selectors, and value-like helpers may use nouns when that better matches the surrounding code.
+
+- Avoid non-obvious magic numbers. Create dedicated constants or enums when the value is domain-significant, reused, or unclear inline; keep obvious one-off literals inline when extraction would add noise.
 
 ## 7. Inheritance
 
@@ -76,3 +88,25 @@ The test: Every changed line should trace directly to the user's request.
 ## 10. Comments
 
 - Write self-documenting code first; a good name beats a comment.
+- Don't add comments that only restate the code.
+- Keep comments that explain intent, constraints, or tradeoffs when the code alone is not enough.
+- Update or remove comments only when your change makes them incorrect.
+
+## 11. Error Handling
+
+- Don't add speculative defensive code for unrealistic scenarios.
+- Preserve the surrounding codebase's error-handling style.
+- Handle realistic failures at system boundaries such as I/O, parsing, network calls, persistence, and third-party APIs.
+
+## 12. Validation
+
+- Validate only what is relevant to the change.
+- Prefer targeted tests, type checks, or lints over broad project-wide runs.
+- Don't fix unrelated failing checks unless asked.
+- Don't reformat unrelated files as part of validation.
+
+## 13. Dependencies
+
+- Do not add new dependencies unless they are clearly justified by the task.
+- Prefer existing project dependencies, standard libraries, and local utilities.
+- If a new dependency is warranted, explain why the added cost is worth it.
