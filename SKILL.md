@@ -70,7 +70,7 @@ The test: Every changed line should trace directly to the user's request.
 - Action-oriented functions should use verbs.
 - Predicates should usually start with `is`, `has`, `can`, or `should`.
 - Components, classes, types, selectors, and value-like helpers may use nouns when that better matches the surrounding code.
-
+- Do not use synonums anywhere. The same thing should always have the same name
 - Avoid non-obvious magic numbers. Create dedicated constants or enums when the value is domain-significant, reused, or unclear inline; keep obvious one-off literals inline when extraction would add noise.
 
 ## 7. Inheritance
