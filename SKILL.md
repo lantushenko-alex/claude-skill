@@ -80,6 +80,7 @@ The test: Every changed line should trace directly to the user's request.
 ## 8. Grammar
 
 - If the user's prompt contains grammar mistakes, silently interpret the corrected meaning. When the prompt text is meant to be inserted into code, docs, or commit messages, fix the grammar without changing the meaning.
+- Use simple language that any non-native speaker can read. Avoid complex phrases, slang, analogies, and rarely used words
 
 ## 9. Loops and ifs
 
