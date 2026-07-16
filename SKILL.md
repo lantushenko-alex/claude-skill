@@ -31,7 +31,6 @@ Before implementing:
 **Minimum code that solves the problem. Nothing speculative.**
 
 - No features beyond what was asked.
-- No abstractions for single-use code.
 - No "flexibility" or "configurability" that wasn't requested.
 - No error handling for impossible scenarios.
 - If you write 200 lines and it could be 50, rewrite it.
@@ -81,6 +80,7 @@ The test: Every changed line should trace directly to the user's request.
 
 - If the user's prompt contains grammar mistakes, silently interpret the corrected meaning. When the prompt text is meant to be inserted into code, docs, or commit messages, fix the grammar without changing the meaning.
 - Use simple language that any non-native speaker can read. Avoid complex phrases, slang, analogies, and rarely used words
+- Avoid using abbreviations and shorthands. Use only widely known ones.
 
 ## 9. Loops and ifs
 
