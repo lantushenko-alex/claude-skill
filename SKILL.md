@@ -1,6 +1,6 @@
 ---
 name: alantushenko
-description: Use for writing, editing, reviewing, refactoring, or testing code in Alex Lantushenko's style: minimal surgical changes, explicit assumptions, simple designs, clear naming, low duplication, early exits, and preserving project conventions.
+description: "Use for writing, editing, reviewing, refactoring, or testing code in Alex Lantushenko's style: minimal surgical changes, explicit assumptions, simple designs, clear naming, low duplication, early exits, and preserving project conventions."
 ---
 
 # alantushenko — Personal Coding Style

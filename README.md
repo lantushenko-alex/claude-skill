@@ -15,3 +15,5 @@ ln -sf "$(pwd)/claude-skill/SKILL.md" ~/.claude/skills/alantushenko/SKILL.md
 ```
 
 The symlink keeps the installed skill in sync with the repo — edit or pull in the repo and changes take effect immediately.
+
+If you want to load this skill in all your claude sessions - add it into ~/CLAUDE.md
