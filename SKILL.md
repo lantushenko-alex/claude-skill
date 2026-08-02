@@ -81,6 +81,7 @@ The test: Every changed line should trace directly to the user's request.
 - If the user's prompt contains grammar mistakes, silently interpret the corrected meaning. When the prompt text is meant to be inserted into code, docs, or commit messages, fix the grammar without changing the meaning.
 - Use simple language that any non-native speaker can read. Avoid complex phrases, slang, analogies, and rarely used words
 - Avoid using abbreviations and shorthands. Use only widely known ones.
+- The no-slang rule also applies to code comments, docstrings, and documentation. Developer jargon counts as slang even when it is common among native speakers: "in-flight", "happy path", "blast radius", "choke point", "footgun", "sane defaults", and similar. Describe the behavior in plain words instead — for example, write "requests running at the same time" instead of "in-flight requests".
 
 ## 9. Loops and ifs
 
