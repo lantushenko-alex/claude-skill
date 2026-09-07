@@ -5,7 +5,7 @@ description: Use whenever writing, editing, reviewing, or refactoring Python cod
 
 # alantushenko-python — Python Conventions
 
-Apply these conventions whenever writing or modifying Python code. These are additive to the general `alantushenko` style; where they conflict, the more specific Python rule here wins.
+Apply these conventions whenever writing or modifying Python code. These are additive to the general `alantushenko` style; where they conflict, the more specific Python rule here wins over the general style, but repository conventions still win over both.
 
 ## 1. Prefer dataclasses over loosely-typed collections
 
@@ -26,4 +26,4 @@ class User:
     active: bool
 ```
 
-Reach for a dataclass when a value has more than one field, when a collection's elements share a fixed shape, or when a dict is passed between functions. Keep plain lists and dicts for genuinely homogeneous, unstructured data (e.g. a set of tags, a lookup table keyed by id).
+Use a dataclass when a value has more than one field, when a collection's elements share a fixed shape, or when a dict is passed between functions. Keep plain lists and dicts for genuinely homogeneous, unstructured data (e.g. a set of tags, a lookup table keyed by id).

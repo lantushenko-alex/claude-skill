@@ -1,6 +1,6 @@
 ---
 name: alantushenko
-description: "Use for writing, editing, reviewing, refactoring, or testing code in Alex Lantushenko's style: minimal surgical changes, explicit assumptions, simple designs, clear naming, low duplication, early exits, and preserving project conventions."
+description: "Use for writing, editing, reviewing, refactoring, or testing code in Alex Lantushenko's style: explicit assumptions, clear naming, low duplication, early exits, and preserving project conventions."
 ---
 
 # alantushenko — Personal Coding Style
@@ -26,44 +26,16 @@ Before implementing:
 - If a simpler approach exists, say so. Push back when warranted.
 - If something is unclear, stop. Name what's confusing. Ask.
 
-## 2. Simplicity First
+## 2. Git Actions
 
-**Minimum code that solves the problem. Nothing speculative.**
-
-- No features beyond what was asked.
-- No "flexibility" or "configurability" that wasn't requested.
-- No error handling for impossible scenarios.
-- If you write 200 lines and it could be 50, rewrite it.
-
-Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
-
-## 3. Surgical Changes
-
-**Touch only what you must. Clean up only your own mess.**
-
-When editing existing code:
-- Don't "improve" adjacent code, comments, or formatting.
-- Don't refactor things that aren't broken.
-- Match existing style, even if you'd do it differently.
-- If you notice unrelated dead code, mention it - don't delete it.
-
-When your changes create orphans:
-- Remove imports/variables/functions that YOUR changes made unused.
-- Don't remove pre-existing dead code unless asked.
-
-The test: Every changed line should trace directly to the user's request.
-
-## 4. Git Actions
-
-- Do not push or commit anything unless explicitly asked
 - When renaming a file, use `git mv` if you are inside a git repository
 
-## 5. Avoid Duplicate Code
+## 3. Avoid Duplicate Code
 
 - Don't introduce duplication: if your change would copy existing logic, extract and reuse a shared helper instead.
 - Mention pre-existing duplication, but don't refactor it unless asked.
 
-## 6. Naming
+## 4. Naming
 
 - Use descriptive names for functions, classes, and variables; names should describe intent, not implementation. Avoid abbreviations except those that are generally accepted and widely known
 - Action-oriented functions should use verbs.
@@ -72,42 +44,38 @@ The test: Every changed line should trace directly to the user's request.
 - Do not use synonums anywhere. The same thing should always have the same name
 - Avoid non-obvious magic numbers. Create dedicated constants or enums when the value is domain-significant, reused, or unclear inline; keep obvious one-off literals inline when extraction would add noise.
 
-## 7. Inheritance
+## 5. Inheritance
 
 - Prefer composition over inheritance
 
-## 8. Grammar
+## 6. Grammar
+
+These rules apply to everything you write: chat replies, code, comments, docstrings, documentation, and commit messages.
 
 - If the user's prompt contains grammar mistakes, silently interpret the corrected meaning. When the prompt text is meant to be inserted into code, docs, or commit messages, fix the grammar without changing the meaning.
 - Use simple language that any non-native speaker can read. Avoid complex phrases, slang, analogies, and rarely used words
 - Avoid using abbreviations and shorthands. Use only widely known ones.
-- The no-slang rule also applies to code comments, docstrings, and documentation. Developer jargon counts as slang even when it is common among native speakers: "in-flight", "happy path", "blast radius", "choke point", "footgun", "sane defaults", and similar. Describe the behavior in plain words instead — for example, write "requests running at the same time" instead of "in-flight requests".
+- Developer jargon counts as slang even when it is common among native speakers: "in-flight", "happy path", "blast radius", "choke point", "footgun", "sane defaults", and similar. Describe the behavior in plain words instead — for example, write "requests running at the same time" instead of "in-flight requests".
 
-## 9. Loops and ifs
+## 7. Loops and ifs
 
 - Prefer exiting loops and if blocks early rather than creating deep nesting
 
-## 10. Comments
+## 8. Comments
 
 - Write self-documenting code first; a good name beats a comment.
 - Don't add comments that only restate the code.
 - Keep comments that explain intent, constraints, or tradeoffs when the code alone is not enough.
 - Update or remove comments only when your change makes them incorrect.
 
-## 11. Error Handling
-
-- Don't add speculative defensive code for unrealistic scenarios.
-- Preserve the surrounding codebase's error-handling style.
-- Handle realistic failures at system boundaries such as I/O, parsing, network calls, persistence, and third-party APIs.
-
-## 12. Validation
+## 9. Validation
 
 - Validate only what is relevant to the change.
 - Prefer targeted tests, type checks, or lints over broad project-wide runs.
 - Don't fix unrelated failing checks unless asked.
 - Don't reformat unrelated files as part of validation.
 
-## 13. Dependencies
+## 10. Dependencies
 
 - Do not add new dependencies unless they are clearly justified by the task.
 - Prefer existing project dependencies, standard libraries, and local utilities.

@@ -5,7 +5,7 @@ description: Use whenever writing, editing, reviewing, or refactoring Java code.
 
 # alantushenko-java — Java Conventions
 
-Apply these conventions whenever writing or modifying Java code. These are additive to the general `alantushenko` style; where they conflict, the more specific Java rule here wins.
+Apply these conventions whenever writing or modifying Java code. These are additive to the general `alantushenko` style; where they conflict, the more specific Java rule here wins over the general style, but repository conventions still win over both.
 
 ## 1. Never assign null to a Boolean
 
