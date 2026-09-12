@@ -19,3 +19,8 @@ Apply these rules whenever you design, build, or review user interface elements.
 
 - Animations must not slow down the interface in a way the user can notice.
 - If an animation blocks user interaction for more than 500 milliseconds, rework it: make it shorter, or let the user interact while it is still running.
+
+## 3. Grids and Tables
+
+- When a grid or table scrolls, keep the column headings and the pagination controls outside the scrollable area, so they stay visible while the user scrolls the rows.
+- Only the rows scroll. Never place headings or pagination controls inside the scroll container.

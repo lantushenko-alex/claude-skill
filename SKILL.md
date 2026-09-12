@@ -80,3 +80,4 @@ These rules apply to everything you write: chat replies, code, comments, docstri
 - Do not add new dependencies unless they are clearly justified by the task.
 - Prefer existing project dependencies, standard libraries, and local utilities.
 - If a new dependency is warranted, explain why the added cost is worth it.
+- When adding a third-party dependency, pin an exact version instead of "latest", a range, or an unpinned entry, where the package manager allows it.
