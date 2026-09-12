@@ -42,7 +42,8 @@ Before implementing:
 - Predicates should usually start with `is`, `has`, `can`, or `should`.
 - Components, classes, types, selectors, and value-like helpers may use nouns when that better matches the surrounding code.
 - Do not use synonums anywhere. The same thing should always have the same name
-- Avoid non-obvious magic numbers. Create dedicated constants or enums when the value is domain-significant, reused, or unclear inline; keep obvious one-off literals inline when extraction would add noise.
+- A function name should fit in one short phrase. If the name needs an "and", split the function.
+- Avoid non-obvious magic numbers and strings. Create dedicated constants or enums when the value is domain-significant, reused, or unclear inline; keep obvious one-off literals inline when extraction would add noise.
 
 ## 5. Inheritance
 
@@ -66,7 +67,11 @@ These rules apply to everything you write: chat replies, code, comments, docstri
 - Write self-documenting code first; a good name beats a comment.
 - Don't add comments that only restate the code.
 - Keep comments that explain intent, constraints, or tradeoffs when the code alone is not enough.
+- Keep a comment to one direct line. State the fact, then stop. Drop any clause the reader does not need.
+  - Good: `Retry once. The upstream rate-limits bursts.`
+  - Too wordy: `Retry the call one time before giving up, since the upstream rate-limits bursts of requests.`
 - Update or remove comments only when your change makes them incorrect.
+- Delete commented-out code. Git keeps the history.
 
 ## 9. Validation
 
@@ -81,3 +86,10 @@ These rules apply to everything you write: chat replies, code, comments, docstri
 - Prefer existing project dependencies, standard libraries, and local utilities.
 - If a new dependency is warranted, explain why the added cost is worth it.
 - When adding a third-party dependency, pin an exact version instead of "latest", a range, or an unpinned entry, where the package manager allows it.
+
+## 11. Code Shape
+
+- Put related lines together and order them the way they run. Add a blank line between steps.
+- Keep one idea per line. Break a long call chain or a busy expression into named steps.
+- If a line takes effort to decode, rewrite it the plain way even if it becomes longer.
+- Delete dead code: unused functions, variables, imports, and branches that can never run.
