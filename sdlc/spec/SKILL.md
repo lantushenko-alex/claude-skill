@@ -16,9 +16,10 @@ Repository conventions for the template and the storage location win over this s
 1. **Read the committed `intent.md`.** Approval lives in git history: a committed intent is an approved intent. If the file is only a working-tree change, say so and ask whether to continue.
 2. **Load organization constraints.** Apply every relevant skill and policy in the session: brand guidelines, security policies, compliance rules, UX standards, and `CLAUDE.md`. If none are available, say so under areas of concern.
 3. **Study the existing codebase** where the change lands: current modules, data models, authentication, integration points. Reuse what exists over inventing new parts.
-4. **Write `spec.md`** using the template below. Answer every open question from `intent.md` or carry it forward as still open.
-5. **Describe areas of concern.** Name every place where two policies contradict each other and you cannot satisfy both. Resolving policy conflicts is the product owner's job, not yours.
-6. **Save the file** in the feature folder (see Storage). The product owner reviews the spec against the intent and resolves concerns with policy owners. `intent.md` and `spec.md` are committed together, and a human approves the move to Stage 3.
+4. **Search for a mature third-party library** before designing any major piece of functionality from scratch. Major means a whole subsystem or a well-known problem that many teams have already solved: authentication, payments, scheduling, parsing, search, charting, state management, and similar. Do not search for small helpers that a few lines of code cover. Prefer libraries the project already depends on, then the standard library, then a new dependency. Offer the options to the product owner in the spec; do not pick a new dependency silently.
+5. **Write `spec.md`** using the template below. Answer every open question from `intent.md` or carry it forward as still open.
+6. **Describe areas of concern.** Name every place where two policies contradict each other and you cannot satisfy both. Resolving policy conflicts is the product owner's job, not yours.
+7. **Save the file** in the feature folder (see Storage). The product owner reviews the spec against the intent and resolves concerns with policy owners. `intent.md` and `spec.md` are committed together, and a human approves the move to Stage 3.
 
 ## Default instruction
 
@@ -54,6 +55,8 @@ When the user gives no specific instruction, act as if they had asked:
 <How the relevant part of the system works today. Name real modules and services.>
 ### Proposed change
 <Components added or changed, data flow, APIs, data model changes, authentication and authorization.>
+### Third-party libraries
+<One block per major piece of functionality. Name the candidate libraries found, their license, maintenance state (last release, open issues, adoption), and how they fit the existing stack. State the recommendation: use the library, or build it in the project and why. Write "none needed" when the functionality is small enough to build. Leave the final decision on a new dependency to the product owner.>
 ### Alternatives considered
 <Options rejected and why.>
 
@@ -75,6 +78,8 @@ When the user gives no specific instruction, act as if they had asked:
 - **Every requirement traces to a goal.** Otherwise remove it or move it to non-goals.
 - **Every requirement is checkable.** Replace "fast" with a number and "secure" with the specific control.
 - **Design names real code.** Real files, services, and data stores from the repository.
+- **Build from scratch needs a reason.** When the spec builds a major piece of functionality that a known library already covers, write why the library was rejected: license, maintenance state, size, missing features, or a policy conflict.
+- **A new dependency is an open decision.** Mark it as a recommendation and list it under open questions with the product owner as the person who answers.
 - **No implementation order and no test file names.** Those belong in `plan.md`.
 - **Same names as `intent.md`** for users, systems, and features.
 

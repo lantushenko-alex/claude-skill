@@ -18,6 +18,21 @@ The symlink keeps the installed skill in sync with the repo — edit or pull in 
 
 If you want to load this skill in all your claude sessions - add it into ~/CLAUDE.md
 
+## Design skill
+
+The `design/` folder holds `alantushenko-design`, the user interface design rules (buttons, forms, controls). Claude applies it when it designs, builds, or reviews user interface elements.
+
+### Enable the design skill
+
+Run this from the root of the cloned repository:
+
+```bash
+mkdir -p ~/.claude/skills/alantushenko-design
+ln -sf "$(pwd)/design/SKILL.md" ~/.claude/skills/alantushenko-design/SKILL.md
+```
+
+Start a new Claude Code session. Claude picks the skill when your request matches its description, and you can call it directly with `/alantushenko-design`.
+
 ## SDLC skills
 
 The `sdlc/` folder holds three skills based on the [AI-Native SDLC Playbook](https://academy.claude.com/courses/ai-native-sdlc-playbook). Each one writes one artifact of the chain `intent.md` → `spec.md` → `plan.md`, and PR review later checks the diff against the spec and the plan.
