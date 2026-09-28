@@ -93,3 +93,8 @@ These rules apply to everything you write: chat replies, code, comments, docstri
 - Keep one idea per line. Break a long call chain or a busy expression into named steps.
 - If a line takes effort to decode, rewrite it the plain way even if it becomes longer.
 - Delete dead code: unused functions, variables, imports, and branches that can never run.
+
+## 12. Scope
+
+- Do not implement features in advance without asking the user. Implement only what is going to be used now.
+- If you think that such a feature is a must-have, ask the user before implementing it.
