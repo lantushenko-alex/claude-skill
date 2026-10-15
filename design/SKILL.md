@@ -24,3 +24,8 @@ Apply these rules whenever you design, build, or review user interface elements.
 
 - When a grid or table scrolls, keep the column headings and the pagination controls outside the scrollable area, so they stay visible while the user scrolls the rows.
 - Only the rows scroll. Never place headings or pagination controls inside the scroll container.
+
+## 4. Dialogs
+
+- Never use the browser's built-in `alert()`, `confirm()`, or `prompt()` dialogs. Some browsers block them, and their look cannot be styled to match the interface.
+- Use a custom dialog, inline message, or notification that follows the interface design instead.
