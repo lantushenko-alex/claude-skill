@@ -14,7 +14,7 @@ Repository conventions for the template and the storage location win over this s
 ## Workflow
 
 1. **Listen.** The originator describes the problem in their own words. Do not ask for formal language.
-2. **Brainstorm until the idea is concrete.** Concrete means: the problem is observable, the outcome is testable, the constraints are explicit, and the remaining unknowns are listed as open questions instead of guessed.
+2. **Brainstorm until the idea is concrete.** Concrete means: the problem is observable, the outcome is testable, the constraints are explicit, and the remaining unknowns, if any, are listed as open questions instead of guessed.
 3. **Write `intent.md`** using the template below. Keep it to a page or less.
 4. **Read the draft back** so the originator can correct misunderstandings.
 5. **Save the file** in the feature folder (see Storage). The product owner reviews and approves the committed file before Stage 2 starts.
@@ -34,7 +34,7 @@ Repository conventions for the template and the storage location win over this s
 <Rules the solution must respect: security, privacy, compliance, budget, deadlines, existing systems that must not change.>
 
 ## Open questions
-<Things nobody in the conversation could answer. One question per line.>
+<Things nobody in the conversation could answer. One question per line. Leave out this section if there are none.>
 ```
 
 ## Example
@@ -62,6 +62,7 @@ Do third-party loss adjusters need access too?
 - **Numbers over adjectives.** "A third of call time" beats "a lot of time". If the exact figure is unknown, write "roughly" and add the figure to open questions.
 - **Every constraint is checkable.** "Existing authentication only" is checkable. "Must be secure" is not.
 - **Do not resolve open questions yourself.** A listed unknown is more useful than a hidden assumption.
+- **Do not invent open questions.** If nothing is unknown, leave out the open questions section.
 - **Keep the author's voice and vocabulary.** Correct grammar only.
 - **No implementation details.** File names, libraries, and tables belong in `spec.md` and `plan.md`.
 
