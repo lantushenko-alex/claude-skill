@@ -9,11 +9,11 @@ Apply these conventions whenever writing or modifying Python code. These are add
 
 ## 1. Prefer dataclasses over loosely-typed collections
 
-Use Python dataclasses instead of `List[str]`, `Dict[int, Any]`, tuples, or nested dicts to carry structured data, because named fields provide better readability and let readers know what each value means.
+Use Python dataclasses instead of `list[str]`, `dict[int, Any]`, tuples, or nested dicts to carry structured data, because named fields provide better readability and let readers know what each value means.
 
 ```python
 # Avoid: what do these positions and keys mean?
-def make_user() -> Dict[str, Any]:
+def make_user() -> dict[str, Any]:
     return {"name": "Ada", "age": 36, "active": True}
 
 # Prefer: fields document themselves and are type-checked

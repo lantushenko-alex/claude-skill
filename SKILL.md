@@ -41,8 +41,11 @@ Before implementing:
 - Action-oriented functions should use verbs.
 - Predicates should usually start with `is`, `has`, `can`, or `should`.
 - Components, classes, types, selectors, and value-like helpers may use nouns when that better matches the surrounding code.
-- Do not use synonums anywhere. The same thing should always have the same name
+- Do not use synonyms anywhere. The same thing should always have the same name
 - A function name should fit in one short phrase. If the name needs an "and", split the function.
+- When a function builds its return value in a local variable, name that variable `result`, unless the language or the repository conventions say otherwise. The reader then sees at once which variable is returned.
+  - Good: `result = ""` ... `return result`
+  - Bad: `full = ""` ... `return full`
 - Avoid non-obvious magic numbers and strings. Create dedicated constants or enums when the value is domain-significant, reused, or unclear inline; keep obvious one-off literals inline when extraction would add noise.
 
 ## 5. Inheritance
@@ -55,7 +58,6 @@ These rules apply to everything you write: chat replies, code, comments, docstri
 
 - If the user's prompt contains grammar mistakes, silently interpret the corrected meaning. When the prompt text is meant to be inserted into code, docs, or commit messages, fix the grammar without changing the meaning.
 - Use simple language that any non-native speaker can read. Avoid complex phrases, slang, analogies, and rarely used words
-- Avoid using abbreviations and shorthands. Use only widely known ones.
 - Developer jargon counts as slang even when it is common among native speakers: "in-flight", "happy path", "blast radius", "choke point", "footgun", "sane defaults", and similar. Describe the behavior in plain words instead — for example, write "requests running at the same time" instead of "in-flight requests".
 
 ## 7. Loops and ifs
@@ -71,7 +73,7 @@ These rules apply to everything you write: chat replies, code, comments, docstri
   - Good: `Retry once. The upstream rate-limits bursts.`
   - Too wordy: `Retry the call one time before giving up, since the upstream rate-limits bursts of requests.`
 - Update or remove comments only when your change makes them incorrect.
-- Delete commented-out code. Git keeps the history.
+- Delete commented-out code, also when it existed before your change. Git keeps the history.
 
 ## 9. Validation
 
@@ -92,9 +94,8 @@ These rules apply to everything you write: chat replies, code, comments, docstri
 - Put related lines together and order them the way they run. Add a blank line between steps.
 - Keep one idea per line. Break a long call chain or a busy expression into named steps.
 - If a line takes effort to decode, rewrite it the plain way even if it becomes longer.
-- Delete dead code: unused functions, variables, imports, and branches that can never run.
+- Delete dead code: unused functions, variables, imports, and branches that can never run. This is allowed without asking, also for dead code that existed before your change in the files you are working on.
 
 ## 12. Scope
 
-- Do not implement features in advance without asking the user. Implement only what is going to be used now.
-- If you think that such a feature is a must-have, ask the user before implementing it.
+- Implement only what is going to be used now. If you think that a feature for later is a must-have, ask the user before implementing it.

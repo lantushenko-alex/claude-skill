@@ -21,12 +21,6 @@ Repository conventions for the template and the storage location win over this s
 6. **Describe areas of concern.** Name every place where two policies contradict each other and you cannot satisfy both. Resolving policy conflicts is the product owner's job, not yours.
 7. **Save the file** in the feature folder (see Storage). The product owner reviews the spec against the intent and resolves concerns with policy owners. `intent.md` and `spec.md` are committed together, and a human approves the move to Stage 3.
 
-## Default instruction
-
-When the user gives no specific instruction, act as if they had asked:
-
-> Read the attached intent.md and produce a requirements and design spec for integrating it into our existing codebase. Apply the skills available to you so the plan conforms to our brand guidelines, security policies and UX standards. Document the spec fully as spec.md, ready to hand to the engineering team. Describe clearly any areas of concern, especially where you cannot satisfy contradicting policies.
-
 ## Template
 
 ```markdown

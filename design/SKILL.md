@@ -22,8 +22,7 @@ Apply these rules whenever you design, build, or review user interface elements.
 
 ## 3. Grids and Tables
 
-- When a grid or table scrolls, keep the column headings and the pagination controls outside the scrollable area, so they stay visible while the user scrolls the rows.
-- Only the rows scroll. Never place headings or pagination controls inside the scroll container.
+- When a grid or table scrolls, only the rows scroll. Keep the column headings and the pagination controls outside the scroll container, so they stay visible while the user scrolls the rows.
 
 ## 4. Dialogs
 
